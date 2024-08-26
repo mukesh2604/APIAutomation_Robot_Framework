@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.3 on win32)" generated="2024-07-30T22:25:50.169096" rpa="false" schemaversion="5">
+<suite id="s1" name="APIAutomation" source="C:\Users\mp041\PycharmProjects\APIAutomation">
+<suite id="s1-s1" name="Testcases" source="C:\Users\mp041\PycharmProjects\APIAutomation\Testcases">
+<suite id="s1-s1-s1" name="Tc Get Request" source="C:\Users\mp041\PycharmProjects\APIAutomation\Testcases\Tc_Get_Request.robot">
+<test id="s1-s1-s1-t1" name="Get Employee Details" line="14">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-07-30T22:25:50.863191" level="INFO">Creating Session using : alias=mysession, url=https://dummy.restapiexample.com, headers={'Accept': 'application/json', 'User-Agent': 'RobotFramework', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${baseurl}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-07-30T22:25:50.861192" elapsed="0.001999"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-07-30T22:25:59.028761" level="INFO">GET Request : url=https://dummy.restapiexample.com/api/v1/employees 
+ path_url=/api/v1/employees 
+ headers={'User-Agent': 'RobotFramework', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-07-30T22:25:59.028761" level="INFO">GET Response : url=https://dummy.restapiexample.com/api/v1/employees 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 30 Jul 2024 16:55:56 GMT', 'Server': 'nginx/1.21.6', 'Content-Type': 'application/json', 'Content-Length': '636', 'Cache-Control': 'no-cache, private, max-age=86400', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '58', 'Expires': 'Wed, 31 Jul 2024 16:55:56 GMT', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'X-Endurance-Cache-Level': '2', 'X-nginx-cache': 'WordPress', 'X-Server-Cache': 'true', 'X-Proxy-Cache': 'MISS'} 
+ body={"status":"success","data":[{"id":1,"employee_name":"Tiger Nixon","employee_salary":320800,"employee_age":61,"profile_image":""},{"id":2,"employee_name":"Garrett Winters","employee_salary":170750,"employee_age":63,"profile_image":""},{"id":3,"employee_name":"Ashton Cox","employee_salary":86000,"employee_age":66,"profile_image":""},{"id":4,"employee_name":"Cedric Kelly","employee_salary":433060,"employee_age":22,"profile_image":""},{"id":5,"employee_name":"Airi Satou","employee_salary":162700,"employee_age":33,"profile_image":""},{"id":6,"employee_name":"Brielle Williamson","employee_salary":372000,"employee_age":61,"profile_image":""},{"id":7,"employee_name":"Herrod Chandler","employee_salary":137500,"employee_age":59,"profile_image":""},{"id":8,"employee_name":"Rhona Davidson","employee_salary":327900,"employee_age":55,"profile_image":""},{"id":9,"employee_name":"Colleen Hurst","employee_salary":205500,"employee_age":39,"profile_image":""},{"id":10,"employee_name":"Sonya Frost","employee_salary":103600,"employee_age":23,"profile_image":""},{"id":11,"employee_name":"Jena Gaines","employee_salary":90560,"employee_age":30,"profile_image":""},{"id":12,"employee_name":"Quinn Flynn","employee_salary":342000,"employee_age":22,"profile_image":""},{"id":13,"employee_name":"Charde Marshall","employee_salary":470600,"employee_age":36,"profile_image":""},{"id":14,"employee_name":"Haley Kennedy","employee_salary":313500,"employee_age":43,"profile_image":""},{"id":15,"employee_name":"Tatyana Fitzpatrick","employee_salary":385750,"employee_age":19,"profile_image":""},{"id":16,"employee_name":"Michael Silva","employee_salary":198500,"employee_age":66,"profile_image":""},{"id":17,"employee_name":"Paul Byrd","employee_salary":725000,"employee_age":64,"profile_image":""},{"id":18,"employee_name":"Gloria Little","employee_salary":237500,"employee_age":59,"profile_image":""},{"id":19,"employee_name":"Bradley Greer","employee_salary":132000,"employee_age":41,"profile_image":""},{"id":20,"employee_name":"Dai Rios","employee_salary":217500,"employee_age":35,"profile_image":""},{"id":21,"employee_name":"Jenette Caldwell","employee_salary":345000,"employee_age":30,"profile_image":""},{"id":22,"employee_name":"Yuri Berry","employee_salary":675000,"employee_age":40,"profile_image":""},{"id":23,"employee_name":"Caesar Vance","employee_salary":106450,"employee_age":21,"profile_image":""},{"id":24,"employee_name":"Doris Wilder","employee_salary":85600,"employee_age":23,"profile_image":""}],"message":"Successfully! All records has been fetched."} 
+ </msg>
+<msg time="2024-07-30T22:25:59.028761" level="INFO">C:\Users\mp041\PycharmProjects\APIAutomation\.venv\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummy.restapiexample.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-07-30T22:25:59.029781" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/v1/employees</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-07-30T22:25:50.864154" elapsed="8.165627"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-30T22:25:59.030781" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-30T22:25:59.031761" elapsed="0.000601"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-30T22:25:59.032362" elapsed="0.001096"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-07-30T22:25:59.033458" level="INFO">${statusCode} = 200</msg>
+<var>${statusCode}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-07-30T22:25:59.033458" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${statusCode}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-07-30T22:25:59.034237" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-07-30T22:25:59.034237" level="INFO">${content} = {"status":"success","data":[{"id":1,"employee_name":"Tiger Nixon","employee_salary":320800,"employee_age":61,"profile_image":""},{"id":2,"employee_name":"Garrett Winters","employee_salary":170750,"emp...</msg>
+<var>${content}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-07-30T22:25:59.034237" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${content}</arg>
+<arg>Tiger Nixon"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-07-30T22:25:59.035244" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-07-30T22:25:59.036243" level="INFO">${contentTypeValue} = application/json</msg>
+<var>${contentTypeValue}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-07-30T22:25:59.035244" elapsed="0.000999"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${contentTypeValue}</arg>
+<arg>application/json</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-07-30T22:25:59.036363" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Content-Type: ${contentTypeValue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-30T22:25:59.036363" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-07-30T22:25:50.860217" elapsed="8.177155"/>
+</test>
+<status status="PASS" start="2024-07-30T22:25:50.213637" elapsed="8.823735"/>
+</suite>
+<status status="PASS" start="2024-07-30T22:25:50.212560" elapsed="8.825811"/>
+</suite>
+<status status="PASS" start="2024-07-30T22:25:50.171071" elapsed="8.868302"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="APIAutomation">APIAutomation</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">APIAutomation.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Tc Get Request">APIAutomation.Testcases.Tc Get Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
